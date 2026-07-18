@@ -127,7 +127,7 @@ export default function GameEngine() {
       <header id="game-header" className="min-h-16 border-b border-[#3c2a1c] flex flex-col sm:flex-row items-center justify-between gap-3 p-4 sm:px-8 bg-[#201914] shrink-0 shadow-[inset_0_-1px_0_rgba(255,255,255,0.05)]">
         <div>
           <h1 className="text-base font-semibold tracking-[0.2em] uppercase text-[#d4b270]" style={{ fontFamily: "Lexend, sans-serif" }}>
-            The Silent Cipher
+            Tìm Manh Mối hay cái gì đó tương tự
           </h1>
         </div>
 
