@@ -18,7 +18,7 @@
         "image": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=300"
       },
       {
-        "text": "Đến Tiệm Đồng Hồ gặp Thợ Đồng Hồ.",
+        "text": "Đến Tiệm kem gặp Người bán đá bào.",
         "nextNodeId": "node_l1_clockmaker",
         "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=300"
       }
@@ -66,7 +66,7 @@
   },
   "node_l1_clockmaker": {
     "id": "node_l1_clockmaker",
-    "characterName": "Thợ Đồng Hồ",
+    "characterName": "Người bán đá bào",
     "isReal": true,
     "dialogue": "Tôi chính là Đá Tan. Coi như cậu cũng có chút IQ. Vậy thì, hãy lấy manh mối nằm ở 1 trong 3 chiếc hộp phía sau đi. Tin rằng với IQ siêu phàm cậu có thể giải trong phút mốt nhỉ?",
     "characterImage": "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?auto=format&fit=crop&q=80&w=400",
@@ -91,7 +91,7 @@
   },
   "node_l2_void": {
     "id": "node_l2_void",
-    "characterName": "Thợ Đồng Hồ",
+    "characterName": "Người bán đá bào",
     "isReal": true,
     "dialogue": "Lựa chọn xuất sắc! Cậu không bị đánh lừa bởi những thứ rập khuôn hay lấp lánh bề nổi. Cạch... Chiếc rương mở ra. Bên trong là một tấm bản đồ da dê ghi dòng mật ngữ: 'Gột rửa mây mù, sự thật sáng tỏ.",
     "characterImage": "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?auto=format&fit=crop&q=80&w=400",
