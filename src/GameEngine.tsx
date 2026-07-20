@@ -12,7 +12,7 @@ const nodesList = [
   { id: "node_start", label: "Trưởng phòng", shortLabel: "Sếp", x: 50, y: 150, type: "start", connections: ["node_l1_mechanic", "node_l1_press", "node_l1_clockmaker"] },
   { id: "node_l1_mechanic", label: "Thợ Cơ khí", shortLabel: "Johnny Sins", x: 170, y: 60, type: "investigation", connections: ["bad_end_1"] },
   { id: "node_l1_press", label: "Biên Tập Viên", shortLabel: "BTV", x: 170, y: 150, type: "investigation", connections: ["bad_end_2"] },
-  { id: "node_l1_clockmaker", label: "Thợ Đồng Hồ", shortLabel: "Đồng Hồ", x: 170, y: 240, type: "investigation", connections: ["bad_end_3", "bad_end_4", "node_l2_void"] },
+  { id: "node_l1_clockmaker", label: "Người bán đá bào", shortLabel: "Đồng Hồ", x: 170, y: 240, type: "investigation", connections: ["bad_end_3", "bad_end_4", "node_l2_void"] },
   { id: "bad_end_1", label: "Loditnohoa", shortLabel: "loditnohoa", x: 260, y: 40, type: "bad_end", connections: [] },
   { id: "bad_end_2", label: "tin giả", shortLabel: "-30tr", x: 260, y: 130, type: "bad_end", connections: [] },
   { id: "bad_end_3", label: "Outdated", shortLabel: "big 26?", x: 250, y: 185, type: "bad_end", connections: [] },
@@ -105,7 +105,7 @@ export default function GameEngine() {
           statusColor: "text-amber-600",
           statusText: "Đối tượng nghi vấn"
         };
-      case "Thợ Đồng Hồ":
+      case "Người bán đá bào":
         return {
           bgGradient: "from-emerald-950/40",
           statusColor: "text-emerald-500",
@@ -334,16 +334,16 @@ export default function GameEngine() {
                         <p className={`text-xs leading-normal ${state.currentNodeId !== "node_start" ? "line-through text-stone-500" : "text-[#ebd9b4] font-medium"}`}>
                           Giải mật thư của Người Hát Rong
                         </p>
-                        <p className="text-[9px] text-stone-500 mt-0.5">Mã nhị phân dẫn tới Tiệm Đồng Hồ.</p>
+                        <p className="text-[9px] text-stone-500 mt-0.5">Mã nhị phân dẫn tới Tiệm kem.</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className={`mt-1 w-2.5 h-2.5 border flex-shrink-0 rounded-sm ${state.history.includes("node_l1_clockmaker") || state.currentNodeId === "node_l1_clockmaker" || state.currentNodeId === "node_l2_void" || state.currentNodeId === "node_good_end" ? "bg-[#d4b270] border-[#d4b270]" : "border-[#7c5c3e]"}`}></div>
                       <div>
                         <p className={`text-xs leading-normal ${(state.history.includes("node_l1_clockmaker") || state.currentNodeId === "node_l1_clockmaker") ? "line-through text-stone-500" : "text-[#ebd9b4] font-medium"}`}>
-                          Khám phá manh mối Tiệm Đồng Hồ
+                          Khám phá manh mối Tiệm kem
                         </p>
-                        <p className="text-[9px] text-stone-500 mt-0.5">Hỏi han thợ đồng hồ để rẽ nhánh đúng đắn.</p>
+                        <p className="text-[9px] text-stone-500 mt-0.5">Hỏi han Người bán đá bào để rẽ nhánh đúng đắn.</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
@@ -377,7 +377,7 @@ export default function GameEngine() {
                       <p className="text-xs font-bold text-[#ebd9b4]">Mảnh Giấy Viết Tay Bí Ẩn</p>
                       <p className="text-[10px] text-stone-400 leading-relaxed">
                         {state.currentNodeId !== "node_start"
-                          ? "Mảnh giấy cũ nát chứa mã khóa nhị phân giải thuật, chứng minh mật đạo dẫn thẳng tới tiệm cơ khí của lão thợ đồng hồ."
+                          ? "Mảnh giấy cũ nát chứa mã khóa nhị phân giải thuật, chứng minh mật đạo dẫn thẳng tới tiệm cơ khí của lão Người bán đá bào."
                           : "Đang khóa. Rời khỏi điểm xuất phát để mở vật chứng đầu tiên."}
                       </p>
                     </div>
@@ -393,7 +393,7 @@ export default function GameEngine() {
                       <p className="text-[10px] text-stone-400 leading-relaxed">
                         {state.currentNodeId === "node_l2_void" || state.currentNodeId === "node_good_end"
                           ? "Bản đồ sơ đồ ngầm giấu trong chiếc rương gỗ trống. Chỉ ra lối rẽ an toàn thoát hiểm qua Trạm Bơm Nước."
-                          : "Đang khóa. Chỉ nhận vật chứng sau khi vượt bẫy mê khói của Thợ Đồng Hồ."}
+                          : "Đang khóa. Chỉ nhận vật chứng sau khi vượt bẫy mê khói của Người bán đá bào."}
                       </p>
                     </div>
                   </div>
@@ -498,8 +498,8 @@ export default function GameEngine() {
                       {currentNode.characterName === "Sếp" && "Là sếp nha ae"}
                       {currentNode.characterName === "Thợ cơ khí" && "Sinh năm 98 học Bác khoa Cơ khí bỏ ngang qua IT. Vì bong bóng AI slop nên lại bỏ IT về cơ khí."}
                       {currentNode.characterName === "Biên tập viên" && "Chủ bút tờ báo Sybau. Từng thi Cao khảo TQ, 3 môn 9 điểm."}
-                      {currentNode.characterName === "Thợ Đồng Hồ" && "Bộ Di vật cho support team break nha ae"}
-                      {!["Sếp", "Thợ cơ khí", "Biên tập viên", "Thợ Đồng Hồ"].includes(currentNode.characterName) && "Thông tin chưa rõ ràng. Đối tượng có thể là một điểm bẫy sập được dựng sẵn để tiêu diệt thám tử dấn bước vào sâu."}
+                      {currentNode.characterName === "Người bán đá bào" && "Bộ Di vật cho support team break nha ae"}
+                      {!["Sếp", "Thợ cơ khí", "Biên tập viên", "Người bán đá bào"].includes(currentNode.characterName) && "Thông tin chưa rõ ràng. Đối tượng có thể là một điểm bẫy sập được dựng sẵn để tiêu diệt thám tử dấn bước vào sâu."}
                     </p>
                   </div>
 
@@ -516,8 +516,8 @@ export default function GameEngine() {
                       {currentNode.characterName === "Người Hát Rong" && "Đồng hồ đồng hồ đang hát ru, hai cái tay này nặng trĩu. Mười, mười lắm, hai mươi, sáng thu chơi vơi, chơi một đời lãng du"}
                       {currentNode.characterName === "Thợ Máy" && "Hắn có vẻ bồn chồn. Nếu bước vào xưởng của hắn tiếp, nguy cơ sập hầm cơ học đè bẹp ta là cực lớn."}
                       {currentNode.characterName === "Thư Lại" && "Gì đây? Mét xi bu cu rô nan đô á? Giật tít thế này chắc chắn ăn 30 triệu vào mồm!"}
-                      {currentNode.characterName === "Thợ Đồng Hồ" && "+16% Tấn công kích phá"}
-                      {!["Người Hát Rong", "Thợ Máy", "Thư Lại", "Thợ Đồng Hồ"].includes(currentNode.characterName) && "Quay đầu là bờ"}
+                      {currentNode.characterName === "Người bán đá bào" && "+16% Tấn công kích phá"}
+                      {!["Người Hát Rong", "Thợ Máy", "Thư Lại", "Người bán đá bào"].includes(currentNode.characterName) && "Quay đầu là bờ"}
                     </p>
                   </div>
                 </div>
