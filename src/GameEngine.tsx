@@ -240,6 +240,7 @@ export default function GameEngine() {
                 {currentNode.options.map((opt, idx) => {
                   const numLabels = ["01", "02", "03", "04", "05"];
                   const labelNum = numLabels[idx] || `${idx + 1}`;
+                  const isReturnChoice = opt.nextNodeId === state.currentNodeId || state.history.includes(opt.nextNodeId);
                   return (
                     <button
                       key={idx}
@@ -273,7 +274,7 @@ export default function GameEngine() {
                         {/* Bottom indicator */}
                         <div className="w-full pt-2 border-t border-[#3c2a1c]/40 flex items-center justify-between text-[8px] text-[#d4b270]/40 group-hover:text-[#d4b270] tracking-[0.15em] uppercase font-bold transition-all shrink-0">
                           <span>Lựa chọn</span>
-                          <span className="group-hover:translate-x-1 transition-transform">TIẾP TỤC →</span>
+                          <span className="group-hover:translate-x-1 transition-transform">{isReturnChoice ? "QUAY LẠI" : "TIẾP TỤC →"}</span>
                         </div>
                       </div>
 
