@@ -174,12 +174,6 @@ export default function GameEngine() {
           {/* Optional Scene Illustration */}
             <div className="w-full max-w-2xl h-36 sm:h-44 bg-[#1e1510] border border-[#3c2a1c] rounded-sm flex flex-col justify-center items-center relative shadow-2xl mb-6 shrink-0 select-none overflow-hidden">
               <img src={defaultImageUrl} alt="Default scene" className="absolute inset-0 w-full h-full object-cover opacity-85" />
-              <div className="relative z-10 text-[10px] text-[#ebd9b4]/25 tracking-[0.15em] font-mono uppercase">
-                [ KHUNG CẢNH BẢN ĐỒ // KHÔNG CÓ HÌNH ẢNH ]
-              </div>
-              <div className="relative z-10 text-[8px] text-[#d4b270]/20 font-mono mt-1 uppercase tracking-[0.15em]">
-                DỮ LIỆU SỐ: {currentNode.id.toUpperCase()}
-              </div>
               {/* Vintage style corners */}
               <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#3c2a1c]/60"></div>
               <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-[#3c2a1c]/60"></div>
