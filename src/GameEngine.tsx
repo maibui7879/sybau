@@ -3,6 +3,18 @@ import { GameNode, GameState } from "./types";
 import storyData from "./storyConfig.json";
 
 const defaultImageUrl = new URL("../default_image.jpeg", import.meta.url).href;
+const coverImageUrl = new URL("../cover (1).jpg", import.meta.url).href;
+const myNgheImageUrl = new URL("../Mỹ Nghệ.png", import.meta.url).href;
+const ngheChadImageUrl = new URL("../Nghệ Chad.png", import.meta.url).href;
+const ngheGamindImageUrl = new URL("../Nghệgamind.png", import.meta.url).href;
+const ngheChopperImageUrl = new URL("../Nghệ chopper.png", import.meta.url).href;
+const optionFallbackImageUrl = new URL("../14.png", import.meta.url).href;
+const optionImageUrls = [myNgheImageUrl, ngheChadImageUrl, ngheGamindImageUrl, ngheChopperImageUrl, optionFallbackImageUrl];
+
+const getRandomOptionImageUrl = (seed: string) => {
+  const hash = Array.from(seed).reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  return optionImageUrls[hash % optionImageUrls.length];
+};
 
 // Cast JSON import to typed map
 const storyConfig = storyData as Record<string, GameNode>;
@@ -122,6 +134,52 @@ export default function GameEngine() {
 
   const portrait = getPortraitStyling(currentNode.characterName);
 
+  const roleAssets: Record<string, { displayName: string; subtitle: string; avatarUrl: string; optionUrl: string }> = {
+    "Sếp": {
+      displayName: "Mỹ Nghệ",
+      subtitle: "Sếp",
+      avatarUrl: myNgheImageUrl,
+      optionUrl: myNgheImageUrl
+    },
+    "Người bán đá bào": {
+      displayName: "Nghệ Chopper",
+      subtitle: "Thợ làm đá bào",
+      avatarUrl: ngheChopperImageUrl,
+      optionUrl: ngheChopperImageUrl
+    },
+    "Thợ cơ khí": {
+      displayName: "Nghệ Chad",
+      subtitle: "Thợ cơ khí",
+      avatarUrl: ngheChadImageUrl,
+      optionUrl: ngheChadImageUrl
+    },
+    "Biên tập viên": {
+      displayName: "Nghệgamind",
+      subtitle: "Biên tập viên",
+      avatarUrl: ngheGamindImageUrl,
+      optionUrl: ngheGamindImageUrl
+    }
+  };
+
+  const currentRoleAsset = roleAssets[currentNode.characterName] || {
+    displayName: currentNode.characterName,
+    subtitle: currentNode.characterName,
+    avatarUrl: currentNode.characterName === "Hệ Thống" ? defaultImageUrl : currentNode.characterImage || defaultImageUrl,
+    optionUrl: defaultImageUrl
+  };
+
+  const getOptionImageUrl = (nextNodeId: string, fallback?: string) => {
+    const nodeOptionMap: Record<string, string> = {
+      node_start: roleAssets["Sếp"].optionUrl,
+      node_l1_mechanic: roleAssets["Thợ cơ khí"].optionUrl,
+      node_l1_press: roleAssets["Biên tập viên"].optionUrl,
+      node_l1_clockmaker: roleAssets["Người bán đá bào"].optionUrl,
+      node_l2_void: roleAssets["Người bán đá bào"].optionUrl
+    };
+
+    return nodeOptionMap[nextNodeId] || fallback || optionFallbackImageUrl;
+  };
+
   const cluePatterns = [
     "Đá Tan",
     "IQ siêu phàm",
@@ -193,14 +251,14 @@ export default function GameEngine() {
 
       {/* MAIN SCREEN (CỐT TRUYỆN PHÁ ÁN FULL SCREEN) */}
       <main id="game-main" className="flex-1 flex flex-col relative bg-[radial-gradient(circle_at_center,_#201610_0%,_#0a0705_100%)] p-4 sm:p-12 justify-center items-center">
-        <div className="absolute inset-0 opacity-15 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none"></div>
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle,_rgba(255,255,255,0.08),_transparent_70%)] pointer-events-none"></div>
 
         {/* Immersive Narrative Container */}
         <div className="w-full max-w-4xl flex-1 flex flex-col justify-center items-center text-center z-10 select-none my-auto">
           
           {/* Optional Scene Illustration */}
             <div className="w-full max-w-2xl h-36 sm:h-44 bg-[#1e1510] border border-[#3c2a1c] rounded-sm flex flex-col justify-center items-center relative shadow-2xl mb-6 shrink-0 select-none overflow-hidden">
-              <img src={defaultImageUrl} alt="Default scene" className="absolute inset-0 w-full h-full object-cover opacity-85" />
+              <img src={coverImageUrl} alt="Scene cover" className="absolute inset-0 w-full h-full object-cover opacity-85" />
               {/* Vintage style corners */}
               <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#3c2a1c]/60"></div>
               <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-[#3c2a1c]/60"></div>
@@ -209,13 +267,14 @@ export default function GameEngine() {
           {/* Speaker Character Profile & Dialogue row */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl w-full mb-8 shrink-0">
               <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-[#3d2a1c] bg-[#1e1510] flex flex-col items-center justify-center shrink-0 shadow-lg relative self-center select-none overflow-hidden">
-                <img src={defaultImageUrl} alt="Default portrait" className="absolute inset-0 w-full h-full object-cover opacity-90" />
-                <div className="relative z-10 flex flex-col items-center justify-center">
-                  <span className="text-[11px] font-bold text-[#d4b270]/60 tracking-[0.15em] font-mono uppercase">
-                    {currentNode.characterName.slice(0, 3)}
+                <img src={currentRoleAsset.avatarUrl} alt={currentRoleAsset.displayName} className="absolute inset-0 w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-black/45"></div>
+                <div className="relative z-10 flex flex-col items-center justify-center text-center px-1">
+                  <span className="text-[10px] font-bold text-[#f8e7c0] tracking-[0.15em] font-mono uppercase">
+                    {currentRoleAsset.displayName}
                   </span>
-                  <span className="text-[7px] text-stone-600 font-mono uppercase -mt-0.5">
-                    ID: {currentNode.id.slice(-3).toUpperCase()}
+                  <span className="text-[7px] text-stone-300 font-mono uppercase -mt-0.5 leading-tight">
+                    {currentRoleAsset.subtitle}
                   </span>
                 </div>
               </div>
@@ -236,7 +295,7 @@ export default function GameEngine() {
           {/* Decision Choice Cards */}
           <div className="w-full max-w-4xl flex flex-col items-center mt-2 shrink-0">
             {state.gameStatus === "PLAYING" && currentNode.options.length > 0 ? (
-              <div className="flex flex-col sm:flex-row justify-center items-stretch gap-5 w-full">
+              <div className="grid grid-cols-1 gap-4 w-full sm:grid-cols-3">
                 {currentNode.options.map((opt, idx) => {
                   const numLabels = ["01", "02", "03", "04", "05"];
                   const labelNum = numLabels[idx] || `${idx + 1}`;
@@ -245,14 +304,13 @@ export default function GameEngine() {
                     <button
                       key={idx}
                       onClick={() => handleOptionClick(opt.nextNodeId)}
-                      className="flex-1 min-h-[180px] sm:h-56 bg-[#1a130f] border-2 border-[#3d2a1c] hover:border-[#d4b270] rounded-sm flex flex-col justify-between text-left transition-all duration-300 hover:-translate-y-1.5 cursor-pointer group relative overflow-hidden shadow-[0_10px_25px_rgba(0,0,0,0.6)] hover:shadow-[0_15px_30px_rgba(212,178,112,0.1)]"
+                      className="w-full min-h-[180px] sm:h-56 bg-[#1a130f] border-2 border-[#3d2a1c] hover:border-[#d4b270] rounded-sm flex flex-col justify-between text-left transition-all duration-300 hover:-translate-y-1.5 cursor-pointer group relative overflow-hidden shadow-[0_10px_25px_rgba(0,0,0,0.6)] hover:shadow-[0_15px_30px_rgba(212,178,112,0.1)]"
                       style={{ fontFamily: "Lexend, sans-serif" }}
                     >
                       {/* Option Image Header */}
-                        <div className="w-full h-16 bg-[#1e1510] border-b border-[#3c2a1c]/60 flex flex-col items-center justify-center relative shrink-0 select-none overflow-hidden">
-                          <img src={defaultImageUrl} alt={`Choice ${labelNum}`} className="absolute inset-0 w-full h-full object-cover opacity-90" />
-                          {/* Top accent */}
-                          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-[1px] bg-[#d4b270]/10"></div>
+                        <div className="w-full h-20 sm:h-24 bg-[#1e1510] border-b border-[#3c2a1c]/60 flex items-center justify-center relative shrink-0 select-none overflow-hidden">
+                          <img src={getOptionImageUrl(opt.nextNodeId)} alt={`Choice ${labelNum}`} className="absolute inset-0 w-full h-full object-cover opacity-90" />
+                          <div className="absolute inset-0 bg-black/30"></div>
                         </div>
 
                       {/* Content Container */}
@@ -272,7 +330,7 @@ export default function GameEngine() {
                         </div>
 
                         {/* Bottom indicator */}
-                        <div className="w-full pt-2 border-t border-[#3c2a1c]/40 flex items-center justify-between text-[8px] text-[#d4b270]/40 group-hover:text-[#d4b270] tracking-[0.15em] uppercase font-bold transition-all shrink-0">
+                        <div className="w-full pt-2 border-t border-[#3c2a1c]/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-[8px] text-[#d4b270]/40 group-hover:text-[#d4b270] tracking-[0.15em] uppercase font-bold transition-all shrink-0">
                           <span>Lựa chọn</span>
                           <span className="group-hover:translate-x-1 transition-transform">{isReturnChoice ? "QUAY LẠI" : "TIẾP TỤC →"}</span>
                         </div>
@@ -333,7 +391,7 @@ export default function GameEngine() {
                       <div className={`mt-1 w-2.5 h-2.5 border flex-shrink-0 rounded-sm ${state.currentNodeId !== "node_start" ? "bg-[#d4b270] border-[#d4b270]" : "border-[#7c5c3e]"}`}></div>
                       <div>
                         <p className={`text-xs leading-normal ${state.currentNodeId !== "node_start" ? "line-through text-stone-500" : "text-[#ebd9b4] font-medium"}`}>
-                          Giải mật thư của Người Hát Rong
+                          Giải yêu cầu của sếp
                         </p>
                         <p className="text-[9px] text-stone-500 mt-0.5">Mã nhị phân dẫn tới Tiệm kem.</p>
                       </div>
@@ -472,22 +530,12 @@ export default function GameEngine() {
               
               {/* Portrait container */}
               <div className="w-full md:w-44 flex flex-col items-center gap-3 shrink-0">
-                <div className="w-40 h-52 bg-[#140f0c] border border-[#4a3622] rounded flex flex-col items-center justify-center relative overflow-hidden shadow-lg">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
-                  
-                  <div className="text-xs tracking-[0.15em] text-[#d4b270] z-20 uppercase font-bold font-mono">
-                    NHÂN VẬT
-                  </div>
-                  
-                  {/* Retro TV Scanline */}
-                  <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,_rgba(0,0,0,0.2)_50%)] bg-[size:100%_4px] pointer-events-none opacity-20"></div>
-
-                  <div className="absolute bottom-3 left-3 right-3 text-center z-20">
-                    <p className="text-xs font-bold text-[#ebd9b4]">{currentNode.characterName}</p>
-                    <p className={`text-[8px] tracking-[0.15em] uppercase mt-1 ${portrait.statusColor} font-bold`}>{portrait.statusText.split(" // ")[0]}</p>
-                  </div>
+                <div className="w-40 h-52 bg-[#140f0c] border border-[#4a3622] rounded overflow-hidden shadow-lg">
+                  <img src={currentRoleAsset.avatarUrl} alt={currentNode.characterName} className="w-full h-full object-cover" />
                 </div>
-                <span className="text-[9px] text-stone-500 font-mono tracking-[0.15em] uppercase">VẤN ĐỀ: {currentNode.id}</span>
+                <div className="text-center">
+                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#ebd9b4] mt-2">{currentNode.characterName}</p>
+                </div>
               </div>
 
               {/* Interrogation Profiling Texts */}
@@ -514,11 +562,11 @@ export default function GameEngine() {
                   <div>
                     <h3 className="text-[10px] font-bold text-[#d4b270] uppercase tracking-[0.15em] mb-1">Nhận định của Thám Tử</h3>
                     <p className="text-[11px] text-stone-400 italic font-sans leading-normal">
-                      {currentNode.characterName === "Người Hát Rong" && "Đồng hồ đồng hồ đang hát ru, hai cái tay này nặng trĩu. Mười, mười lắm, hai mươi, sáng thu chơi vơi, chơi một đời lãng du"}
+                      {currentNode.characterName === "Sếp" && "Đồng hồ đồng hồ đang hát ru, hai cái tay này nặng trĩu. Mười, mười lắm, hai mươi, sáng thu chơi vơi, chơi một đời lãng du"}
                       {currentNode.characterName === "Thợ Máy" && "Hắn có vẻ bồn chồn. Nếu bước vào xưởng của hắn tiếp, nguy cơ sập hầm cơ học đè bẹp ta là cực lớn."}
                       {currentNode.characterName === "Thư Lại" && "Gì đây? Mét xi bu cu rô nan đô á? Giật tít thế này chắc chắn ăn 30 triệu vào mồm!"}
                       {currentNode.characterName === "Người bán đá bào" && "+16% Tấn công kích phá"}
-                      {!["Người Hát Rong", "Thợ Máy", "Thư Lại", "Người bán đá bào"].includes(currentNode.characterName) && "Quay đầu là bờ"}
+                      {!["Sếp", "Thợ Máy", "Thư Lại", "Người bán đá bào"].includes(currentNode.characterName) && "Quay đầu là bờ"}
                     </p>
                   </div>
                 </div>
