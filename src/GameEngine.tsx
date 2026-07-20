@@ -122,6 +122,33 @@ export default function GameEngine() {
 
   const portrait = getPortraitStyling(currentNode.characterName);
 
+  const cluePatterns = [
+    "Đá Tan",
+    "IQ siêu phàm",
+    "Gột rửa",
+    "Sáng tỏ"
+  ];
+
+  const highlightClues = (text: string) => {
+    if (!text) return text;
+
+    const escapedPatterns = cluePatterns
+      .map(phrase => phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+      .join("|");
+    const splitRegex = new RegExp(`(${escapedPatterns})`, "gi");
+    const testRegex = new RegExp(`(${escapedPatterns})`, "i");
+
+    return text.split(splitRegex).map((part, idx) =>
+      testRegex.test(part) ? (
+        <span key={`clue-${idx}`} className="rounded-sm bg-[#f59e0b]/20 text-[#f59e0b] px-0.5">
+          {part}
+        </span>
+      ) : (
+        part
+      )
+    );
+  };
+
   return (
     <div id="game-container" className="w-full min-h-screen bg-[#171310] text-[#ebd9b4] font-sans flex flex-col relative" style={{ fontFamily: "Lexend, sans-serif" }}>
       
@@ -201,7 +228,7 @@ export default function GameEngine() {
               
               {/* Core Dialogue Text */}
               <p className="text-sm md:text-base font-sans text-[#ebd9b4] italic leading-relaxed font-light" style={{ fontFamily: "Lexend, sans-serif" }}>
-                "{currentNode.dialogue}"
+                "{highlightClues(currentNode.dialogue)}"
               </p>
             </div>
           </div>
@@ -479,7 +506,7 @@ export default function GameEngine() {
                   <div>
                     <h3 className="text-[10px] font-bold text-[#d4b270] uppercase tracking-[0.15em] mb-1">Lời Khai Thu Thập Được</h3>
                     <div className="bg-[#140f0c] border border-[#3c2a1c] p-3 rounded italic text-xs text-[#ebd9b4] leading-relaxed font-sans">
-                      "{currentNode.dialogue}"
+                      "{highlightClues(currentNode.dialogue)}"
                     </div>
                   </div>
 
