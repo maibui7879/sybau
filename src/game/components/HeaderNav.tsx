@@ -1,3 +1,5 @@
+import { FaBook, FaUserSecret, FaMapMarkedAlt } from "react-icons/fa";
+
 interface HeaderNavProps {
   onOpenNotebook: () => void;
   onOpenWitness: () => void;
@@ -17,23 +19,26 @@ export default function HeaderNav({ onOpenNotebook, onOpenWitness, onOpenMap, ga
       <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
         <button
           onClick={onOpenNotebook}
-          className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[#2a1d15] hover:bg-[#3d2b1f] border border-[#d4b270]/40 hover:border-[#d4b270] rounded-sm text-xs font-semibold text-[#ebd9b4] transition-all cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)] uppercase tracking-[0.15em]"
+          className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-[#2a1d15] hover:bg-[#3d2b1f] border border-[#d4b270]/40 hover:border-[#d4b270] rounded-sm text-xs font-semibold text-[#ebd9b4] transition-all cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)] uppercase tracking-[0.15em]"
         >
-          Sổ Tay
+          <FaBook className="text-[#d4b270] text-sm shrink-0" />
+          <span>Sổ Tay</span>
         </button>
 
         <button
           onClick={onOpenWitness}
-          className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[#2a1d15] hover:bg-[#3d2b1f] border border-[#d4b270]/40 hover:border-[#d4b270] rounded-sm text-xs font-semibold text-[#ebd9b4] transition-all cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)] uppercase tracking-[0.15em]"
+          className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-[#2a1d15] hover:bg-[#3d2b1f] border border-[#d4b270]/40 hover:border-[#d4b270] rounded-sm text-xs font-semibold text-[#ebd9b4] transition-all cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)] uppercase tracking-[0.15em]"
         >
-          Nhân Chứng
+          <FaUserSecret className="text-[#d4b270] text-sm shrink-0" />
+          <span>Nhân Chứng</span>
         </button>
 
         <button
           onClick={onOpenMap}
-          className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[#2a1d15] hover:bg-[#3d2b1f] border border-[#d4b270]/40 hover:border-[#d4b270] rounded-sm text-xs font-semibold text-[#ebd9b4] transition-all cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)] uppercase tracking-[0.15em]"
+          className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-[#2a1d15] hover:bg-[#3d2b1f] border border-[#d4b270]/40 hover:border-[#d4b270] rounded-sm text-xs font-semibold text-[#ebd9b4] transition-all cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)] uppercase tracking-[0.15em]"
         >
-          Bản Đồ
+          <FaMapMarkedAlt className="text-[#d4b270] text-sm shrink-0" />
+          <span>Bản Đồ</span>
         </button>
 
         {gameStatus !== "PLAYING" && (

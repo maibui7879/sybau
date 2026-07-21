@@ -28,11 +28,30 @@ export function useGameEngine() {
   }, [state.currentNodeId, state.gameStatus]);
 
   const handleOptionClick = (nextNodeId: string) => {
-    setState(prev => ({
-      ...prev,
-      currentNodeId: nextNodeId,
-      history: [...prev.history, prev.currentNodeId]
-    }));
+    setState(prev => {
+      if (nextNodeId === GAME_START_NODE) {
+        return {
+          ...prev,
+          currentNodeId: nextNodeId,
+          history: []
+        };
+      }
+
+      const rewindIndex = prev.history.indexOf(nextNodeId);
+      if (rewindIndex !== -1) {
+        return {
+          ...prev,
+          currentNodeId: nextNodeId,
+          history: prev.history.slice(0, rewindIndex + 1)
+        };
+      }
+
+      return {
+        ...prev,
+        currentNodeId: nextNodeId,
+        history: [...prev.history, prev.currentNodeId]
+      };
+    });
   };
 
   const handleReset = () => {

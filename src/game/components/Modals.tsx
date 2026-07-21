@@ -1,7 +1,7 @@
 import { GameNode, GameState } from "../../types";
 import { highlightClues } from "../utils/uiHelpers.tsx";
 import { nodesList, storyConfig } from "../logic/gameData";
-import {useEffect, useState} from "react";
+import { useEffect } from "react";
 interface NotepadModalProps {
   state: GameState;
   onClose: () => void;
@@ -78,7 +78,7 @@ export function NotepadModal({ state, onClose }: NotepadModalProps) {
             </div>
 
             <div className="text-[9px] text-stone-500 border-t border-[#3c2a1c] pt-4 font-mono">
-              Holmes Investigation Bureau
+              Văn phòng thám tử PCA <br />
             </div>
           </div>
 
@@ -209,10 +209,10 @@ export function WitnessModal({ currentNode, currentRoleAsset, onClose }: Witness
                 <h3 className="text-[10px] font-bold text-[#d4b270] uppercase tracking-[0.15em] mb-1">Nhận định của Thám Tử</h3>
                 <p className="text-[11px] text-stone-400 italic font-sans leading-normal">
                   {currentNode.characterName === "Sếp" && "Sao bạn lại nghi ngờ sếp?"}
-                  {currentNode.characterName === "Thợ Máy" && "Hình như mình từng thấy mặt hắn ta trên hornpub?"}
-                  {currentNode.characterName === "Thư Lại" && "Gì đây? Mét xi bu cu yamal á? Giật tít thế này chắc chắn ăn 30 triệu vào mồm!"}
+                  {currentNode.characterName === "Thợ Cơ khí" && "Hình như mình từng thấy mặt hắn ta trên hornpub?"}
+                  {currentNode.characterName === "Biên tập viên" && "Gì đây? Mét xi bu cu yamal á? Giật tít thế này chắc chắn ăn 30 triệu vào mồm!"}
                   {currentNode.characterName === "Người bán đá bào" && "Nóng vl mua t que kem đi chat"}
-                  {!["Sếp", "Thợ Máy", "Thư Lại", "Người bán đá bào"].includes(currentNode.characterName) && "Quay đầu là bờ"}
+                  {!["Sếp", "Thợ Cơ khí", "Biên tập viên", "Người bán đá bào"].includes(currentNode.characterName) && "Quay đầu là bờ"}
                 </p>
               </div>
             </div>
@@ -227,23 +227,25 @@ export function WitnessModal({ currentNode, currentRoleAsset, onClose }: Witness
     </div>
   );
 }
+// Nhớ import MapModalProps và nodesList của bạn vào đây
 
 export function MapModal({ state, currentNodeId, mapEntryNodeId, isLinkActive, onClose }: MapModalProps) {
   
   useEffect(() => {
     const timer = setTimeout(() => {
       onClose();
-    }, 2000);
-    
+    }, 1000);
     return () => clearTimeout(timer);
   }, [onClose]);
 
   const entryNode = nodesList.find(node => node.id === mapEntryNodeId);
   const currentNode = nodesList.find(node => node.id === currentNodeId);
+  const currentPath = [...state.history, state.currentNodeId];
 
   return (
     <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4 transition-all duration-300">
       <div className="bg-[#fcf9f2] border-2 border-[#d4b270] w-full max-w-4xl h-full max-h-[85vh] md:h-[520px] rounded flex flex-col relative shadow-[0_20px_60px_rgba(0,0,0,0.4)] overflow-hidden">
+        
         {/* Thanh Header */}
         <div className="h-14 border-b border-[#ebd9b4] bg-[#f7f2e8] px-6 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
@@ -257,7 +259,7 @@ export function MapModal({ state, currentNodeId, mapEntryNodeId, isLinkActive, o
           </button>
         </div>
 
-        {/* Nội dung Map (Giữ nguyên đoạn code SVG của bạn) */}
+        {/* Nội dung Map */}
         <div className="flex-1 p-6 flex flex-col justify-between overflow-hidden relative bg-[#faf6f0]">
           <div className="absolute inset-0 opacity-15 bg-[radial-gradient(circle_at_center,_#d4b270_0%,_transparent_70%)] pointer-events-none"></div>
 
@@ -282,23 +284,17 @@ export function MapModal({ state, currentNodeId, mapEntryNodeId, isLinkActive, o
               {nodesList.map((node) => {
                 const isCurrent = state.currentNodeId === node.id;
                 const isVisited = state.history.includes(node.id) || isCurrent;
-                const isReachable = nodesList.some(n => (state.history.includes(n.id) || state.currentNodeId === n.id) && n.connections.includes(node.id));
-                const isKnown = isVisited || isReachable;
-
-                if (!isKnown) return null;
+                
+                // Tránh lặp vô ích nếu node này chưa từng được đặt chân tới
+                if (!isVisited) return null;
 
                 return node.connections.map((targetId) => {
-                  if (targetId === "node_start") return null; // Chặn vẽ vạch lùi về start
+                  if (targetId === "node_start") return null;
 
                   const targetNode = nodesList.find(n => n.id === targetId);
                   if (!targetNode) return null;
 
-                  const targetVisited = state.history.includes(targetId) || state.currentNodeId === targetId;
-                  const targetReachable = nodesList.some(n => (state.history.includes(n.id) || state.currentNodeId === n.id) && n.connections.includes(targetId));
-                  const targetKnown = targetVisited || targetReachable;
-                  if (!targetKnown) return null;
-
-                  const active = isLinkActive(node.id, targetId);
+                  const isWalked = currentPath.some((id, index) => id === node.id && currentPath[index + 1] === targetId);
                   const isGood = targetId === "node_good_end";
 
                   return (
@@ -308,9 +304,9 @@ export function MapModal({ state, currentNodeId, mapEntryNodeId, isLinkActive, o
                       y1={node.y}
                       x2={targetNode.x}
                       y2={targetNode.y}
-                      stroke={active ? (isGood ? "#10b981" : "#ef4444") : "#cbd5e1"}
-                      strokeWidth={active ? "3" : "1.2"}
-                      strokeDasharray={active ? "none" : "3,3"}
+                      stroke={isWalked ? (isGood ? "#10b981" : "#ef4444") : "#cbd5e1"}
+                      strokeWidth={isWalked ? "3" : "1.2"}
+                      strokeDasharray={isWalked ? "none" : "3,3"}
                       className="transition-all duration-500"
                     />
                   );
@@ -369,7 +365,7 @@ export function MapModal({ state, currentNodeId, mapEntryNodeId, isLinkActive, o
                 );
               })}
               
-              {/* ANIMATION ĐỊNH VỊ LAYER PLAYER CHẠY (Thêm duration-1000 cho mượt) */}
+              {/* ANIMATION ĐỊNH VỊ PLAYER */}
               {currentNode && (
                 <g 
                   className="transition-all duration-1000 ease-in-out pointer-events-none"
