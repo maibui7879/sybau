@@ -53,23 +53,23 @@ export function NotepadModal({ state, onClose }: NotepadModalProps) {
                     <p className={`text-xs leading-normal ${state.currentNodeId !== "node_start" ? "line-through text-stone-500" : "text-[#ebd9b4] font-medium"}`}>
                       Giải yêu cầu của sếp
                     </p>
-                    <p className="text-[9px] text-stone-500 mt-0.5">Mã nhị phân dẫn tới Tiệm kem.</p>
+                    <p className="text-[9px] text-stone-500 mt-0.5">umm...?</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className={`mt-1 w-2.5 h-2.5 border flex-shrink-0 rounded-sm ${state.history.includes("node_l1_clockmaker") || state.currentNodeId === "node_l1_clockmaker" || state.currentNodeId === "node_l2_void" || state.currentNodeId === "node_good_end" ? "bg-[#d4b270] border-[#d4b270]" : "border-[#7c5c3e]"}`}></div>
                   <div>
                     <p className={`text-xs leading-normal ${(state.history.includes("node_l1_clockmaker") || state.currentNodeId === "node_l1_clockmaker") ? "line-through text-stone-500" : "text-[#ebd9b4] font-medium"}`}>
-                      Khám phá manh mối Tiệm kem
+                      Khám phá manh mối ở tiệm '?'
                     </p>
-                    <p className="text-[9px] text-stone-500 mt-0.5">Hỏi han Người bán đá bào để rẽ nhánh đúng đắn.</p>
+                    <p className="text-[9px] text-stone-500 mt-0.5">Hỏi han '?' để tìm đáp án đúng.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className={`mt-1 w-2.5 h-2.5 border flex-shrink-0 rounded-sm ${state.currentNodeId === "node_good_end" ? "bg-emerald-500 border-emerald-500" : "border-[#7c5c3e]"}`}></div>
                   <div>
                     <p className={`text-xs leading-normal ${state.currentNodeId === "node_good_end" ? "text-emerald-500 font-semibold" : "text-[#ebd9b4] font-medium"}`}>
-                      Thoát hiểm qua Trạm Bơm Ngầm
+                      Đến '?' và hoàn tất hồ sơ'
                     </p>
                     <p className="text-[9px] text-stone-500 mt-0.5">Tìm ra Manh mối và hoàn tất hồ sơ.</p>
                   </div>
@@ -90,10 +90,10 @@ export function NotepadModal({ state, onClose }: NotepadModalProps) {
                   #01
                 </div>
                 <div className="space-y-0.5">
-                  <p className="text-xs font-bold text-[#ebd9b4]">Mảnh Giấy Viết Tay Bí Ẩn</p>
+                  <p className="text-xs font-bold text-[#ebd9b4]">Đá Tan là ai?</p>
                   <p className="text-[10px] text-stone-400 leading-relaxed">
                     {state.currentNodeId !== "node_start"
-                      ? "Mảnh giấy cũ nát chứa mã khóa nhị phân giải thuật, chứng minh mật đạo dẫn thẳng tới tiệm cơ khí của lão Người bán đá bào."
+                      ? "Là ai vậy anh em? Một tên quý bửu bí ẩn, chuyên bán đá bào và các loại đá quý hiếm. Có thể là manh mối quan trọng trong vụ án. Hãy tìm hiểu thêm."
                       : "Đang khóa. Rời khỏi điểm xuất phát để mở vật chứng đầu tiên."}
                   </p>
                 </div>
@@ -104,10 +104,10 @@ export function NotepadModal({ state, onClose }: NotepadModalProps) {
                   #02
                 </div>
                 <div className="space-y-0.5">
-                  <p className="text-xs font-bold text-[#ebd9b4]">Bản Đồ Đường Ống Thủy Lực</p>
+                  <p className="text-xs font-bold text-[#ebd9b4]">Bóc túi mù</p>
                   <p className="text-[10px] text-stone-400 leading-relaxed">
                     {state.currentNodeId === "node_l2_void" || state.currentNodeId === "node_good_end"
-                      ? "Bản đồ sơ đồ ngầm giấu trong chiếc rương gỗ trống. Chỉ ra lối rẽ an toàn thoát hiểm qua Trạm Bơm Nước."
+                      ? "Hãy làm một người tốt. Hãy làm một người tốt. Hãy làm một người tốt."
                       : "Đang khóa. Chỉ nhận vật chứng sau khi vượt bẫy mê khói của Người bán đá bào."}
                   </p>
                 </div>
