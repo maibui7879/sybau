@@ -74,11 +74,17 @@ export default function GameEngine() {
   }, []);
 
   const handleOptionClick = (nextNodeId: string) => {
+    setIsMapOpen(true);
+    setTimeout(() => {
+    
+    // Cập nhật state nội bộ của game (tuỳ theo logic bạn đang dùng)
     setState(prev => ({
       ...prev,
-      currentNodeId: nextNodeId,
-      history: [...prev.history, prev.currentNodeId]
+      history: [...prev.history, prev.currentNodeId],
+      currentNodeId: nextNodeId
     }));
+
+  }, 1000);
   };
 
   const handleReset = () => {
@@ -562,10 +568,10 @@ export default function GameEngine() {
                   <div>
                     <h3 className="text-[10px] font-bold text-[#d4b270] uppercase tracking-[0.15em] mb-1">Nhận định của Thám Tử</h3>
                     <p className="text-[11px] text-stone-400 italic font-sans leading-normal">
-                      {currentNode.characterName === "Sếp" && "Đồng hồ đồng hồ đang hát ru, hai cái tay này nặng trĩu. Mười, mười lắm, hai mươi, sáng thu chơi vơi, chơi một đời lãng du"}
-                      {currentNode.characterName === "Thợ Máy" && "Hắn có vẻ bồn chồn. Nếu bước vào xưởng của hắn tiếp, nguy cơ sập hầm cơ học đè bẹp ta là cực lớn."}
-                      {currentNode.characterName === "Thư Lại" && "Gì đây? Mét xi bu cu rô nan đô á? Giật tít thế này chắc chắn ăn 30 triệu vào mồm!"}
-                      {currentNode.characterName === "Người bán đá bào" && "+16% Tấn công kích phá"}
+                      {currentNode.characterName === "Sếp" && "Sao bạn lại nghi ngờ sếp?"}
+                      {currentNode.characterName === "Thợ Máy" && "Hình như mình từng thấy mặt hắn ta trên hornpub?"}
+                      {currentNode.characterName === "Thư Lại" && "Gì đây? Mét xi bu cu yamal á? Giật tít thế này chắc chắn ăn 30 triệu vào mồm!"}
+                      {currentNode.characterName === "Người bán đá bào" && "Nóng vl mua t que kem đi chat"}
                       {!["Sếp", "Thợ Máy", "Thư Lại", "Người bán đá bào"].includes(currentNode.characterName) && "Quay đầu là bờ"}
                     </p>
                   </div>

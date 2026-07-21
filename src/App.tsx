@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import GameEngine from "./GameEngine";
+import GameEngine from "./game/GameEngine";
 
 export default function App() {
   return (
