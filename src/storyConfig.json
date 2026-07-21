@@ -78,7 +78,7 @@
     "id": "node_l1_press",
     "characterName": "Biên tập viên",
     "isReal": false,
-    "dialogue": "Cậu đến đúng lúc lắm! Trên báo đăng tin Đặc vụ bí mật Đá bay hay cái gì đó tương tự đang bị vây hãm ở Tháp Đồng hồ kìa. Cầm lấy xấp báo đi phát cho đám đông đang tụ tập ngoài kia rồi cùng họ ùa lên đó bắt giải vây đi!",
+    "dialogue": "Cậu đến đúng lúc lắm! Trên báo đăng tin Đặc vụ bí mật Đá bay hay cái gì đó tương tự đang bị vây hãm ở Tháp Đồng hồ kìa. Cầm lấy xấp báo đi phát cho đám đông đang tụ tập ngoài kia rồi cùng họ ùa lên đó giải vây đi!",
     "characterImage": "nghegamind.png",
     "sceneImage": "cover.jpg",
     "options": [
