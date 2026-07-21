@@ -4,23 +4,23 @@
     "characterName": "Sếp",
     "isReal": true,
     "dialogue": "Ê tìm Đặc vụ bí mật lấy manh mối giùm cái. Mật danh là Đá Tan nhé!",
-    "characterImage": "Mỹ Nghệ.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "mynghe.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Đến Xưởng Cơ Khí gặp hỏi Thợ cơ khí.",
         "nextNodeId": "node_l1_mechanic",
-        "image": "Nghệ Chad.png"
+        "image": "nghechad.png"
       },
       {
         "text": "Đến Tòa Soạn Báo gặp Biên tập viên.",
         "nextNodeId": "node_l1_press",
-        "image": "Nghệgamind.png"
+        "image": "nghegamind.png"
       },
       {
         "text": "Đến Tiệm kem gặp Người bán đá bào.",
         "nextNodeId": "node_l1_clockmaker",
-        "image": "Nghệ chopper.png"
+        "image": "nghechopper.png"
       }
     ]
   },
@@ -29,23 +29,23 @@
     "characterName": "Thợ cơ khí",
     "isReal": false,
     "dialogue": "Hỏi manh mối à? Giúp ta vặn con ốc vít đã.",
-    "characterImage": "Nghệ Chad.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "nghechad.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Chui xuống gầm phụ gã sửa chữa máy móc.",
         "nextNodeId": "node_l2_mechanic_trap",
-        "image": "Nghệ Chad.png"
+        "image": "nghechad.png"
       },
       {
         "text": "Tay hắn dính đầy dầu bôi trơn. Hình như hắn ta là Johnny Sins?????",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Bảo hắn: 'Làm việc đi thằng nô lệ', rồi định bỏ đi.",
         "nextNodeId": "bad_end_1_c",
-        "image": "Nghệ Chad.png"
+        "image": "nghechad.png"
       }
     ]
   },
@@ -54,23 +54,23 @@
     "characterName": "Thợ cơ khí",
     "isReal": false,
     "dialogue": "Vừa chui xuống gầm, gã thợ bỗng bấm nút khóa chốt giàn nâng lại. Không gian hẹp lại, mùi dầu mỡ nồng nặc. Hắn thò đầu xuống, nở một nụ cười rạng rỡ đến đáng sợ: 'Cậu trai trẻ, giúp tôi sửa lại cái ống xả này nhé?'",
-    "characterImage": "Nghệ Chad.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "nghechad.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Dùng cờ lê gõ vào đầu hắn để thoát thân!",
         "nextNodeId": "bad_end_1_a",
-        "image": "Nghệ Chad.png"
+        "image": "nghechad.png"
       },
       {
         "text": "Cắn răng cam chịu, ngoan ngoãn vặn ốc...",
         "nextNodeId": "bad_end_1_b",
-        "image": "Nghệ Chad.png"
+        "image": "nghechad.png"
       },
       {
         "text": "Tuyệt chiêu: Nhắm mắt 'Giả vờ ngất xỉu'.",
         "nextNodeId": "bad_end_1_d",
-        "image": "Nghệ Chad.png"
+        "image": "nghechad.png"
       }
     ]
   },
@@ -79,23 +79,23 @@
     "characterName": "Biên tập viên",
     "isReal": false,
     "dialogue": "Cậu đến đúng lúc lắm! Trên báo đăng tin Đặc vụ bí mật Đá bay hay cái gì đó tương tự đang bị vây hãm ở Tháp Đồng hồ kìa. Cầm lấy xấp báo đi phát cho đám đông đang tụ tập ngoài kia rồi cùng họ ùa lên đó bắt giải vây đi!",
-    "characterImage": "Nghệgamind.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "nghegamind.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Báo viết chắc là chuẩn, lập tức chạy theo đám đông!",
         "nextNodeId": "node_l2_press_riot",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Nghe phát biết xàm. Thôi sleep thôi.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Chê báo in phèn, đòi quét mã QR đọc bản PDF.",
         "nextNodeId": "bad_end_2_c",
-        "image": "Nghệgamind.png"
+        "image": "nghegamind.png"
       }
     ]
   },
@@ -104,23 +104,23 @@
     "characterName": "Đám đông",
     "isReal": false,
     "dialogue": "Bạn hăng hái dẫn đầu đám đông rầm rập tiến về phía Tháp Đồng hồ. Bỗng nhiên, ba chiếc xe bọc thép của lực lượng chức năng chặn ngang đường. Một sĩ quan cầm loa hô to: 'Yêu cầu đám đông giải tán ngay lập tức!'",
-    "characterImage": "Mỹ Nghệ.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "mynghe.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Liều mạng xông lên, cứu Đặc vụ Đá bay bằng mọi giá!",
         "nextNodeId": "bad_end_2_a",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Quay xe gấp! Giả vờ làm người qua đường đi mua nước mắm.",
         "nextNodeId": "bad_end_2_b",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Lôi điện thoại ra livestream 'Biến căng cực mạnh' để câu view.",
         "nextNodeId": "bad_end_2_d",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       }
     ]
   },
@@ -129,23 +129,23 @@
     "characterName": "Người bán đá bào",
     "isReal": true,
     "dialogue": "Tôi chính là Đá Tan. Coi như cậu cũng có chút IQ. Vậy thì, hãy lấy manh mối nằm ở 1 trong 3 chiếc hộp phía sau đi. Tin rằng với IQ siêu phàm cậu có thể giải trong phút mốt nhỉ?",
-    "characterImage": "Nghệ chopper.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "nghechopper.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Hộp mù số 1: sybau",
         "nextNodeId": "node_l2_sybau_trap",
-        "image": "Nghệ chopper.png"
+        "image": "nghechopper.png"
       },
       {
         "text": "Hộp mù số 2: chung ta la cha li kiec",
         "nextNodeId": "bad_end_4",
-        "image": "Nghệ chopper.png"
+        "image": "nghechopper.png"
       },
       {
         "text": "Hộp mù số 3: Hộp này đúng nè",
         "nextNodeId": "node_l2_void",
-        "image": "Nghệ chopper.png"
+        "image": "nghechopper.png"
       }
     ]
   },
@@ -154,23 +154,23 @@
     "characterName": "Người bán đá bào",
     "isReal": true,
     "dialogue": "Bạn đưa tay chạm vào hộp số 1. Đá Tan nhếch mép: 'Cậu chắc chưa? Mở cái hộp đó ra là bão táp đấy nhé.'",
-    "characterImage": "Nghệ chopper.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "nghechopper.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Just put the fries in the bag bruh.",
         "nextNodeId": "bad_end_3",
-        "image": "Nghệ chopper.png"
+        "image": "nghechopper.png"
       },
       {
         "text": "ê khoan, tôi đổi ý, mở hộp số 3 đi.",
         "nextNodeId": "bad_end_3_b",
-        "image": "Nghệ chopper.png"
+        "image": "nghechopper.png"
       },
       {
         "text": "What the sigma?",
         "nextNodeId": "bad_end_3_c",
-        "image": "Nghệ chopper.png"
+        "image": "nghechopper.png"
       }
     ]
   },
@@ -179,23 +179,23 @@
     "characterName": "Người bán đá bào",
     "isReal": true,
     "dialogue": "Lựa chọn xuất sắc! Cậu không bị đánh lừa bởi những thứ rập khuôn hay lấp lánh bề nổi. Cạch... Chiếc rương mở ra. Bên trong là một tấm bản đồ da dê ghi dòng mật ngữ: 'Gột rửa mây mù, sự thật sáng tỏ.'",
-    "characterImage": "Nghệ chopper.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "nghechopper.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Đỉnh Tháp Đồng hồ",
         "nextNodeId": "node_l3_clocktower_trap",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Hầm rượu bỏ hoang",
         "nextNodeId": "bad_end_6",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Trạm bơm nước ngầm",
         "nextNodeId": "node_good_end",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       }
     ]
   },
@@ -204,23 +204,23 @@
     "characterName": "Nhân ảnh bí ẩn",
     "isReal": false,
     "dialogue": "Bạn hì hục leo 3667 bậc thang lên đỉnh tháp. Vừa mở cửa sân thượng, bạn thấy một bóng đen đang đứng canh tác hào quang. Bên cạnh hắn là một chiếc vali đen.",
-    "characterImage": "Mỹ Nghệ.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "mynghe.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "20 hecta aura không thể tự canh tác chính nó. Hãy tiến lên cướp lấy aura từ hắn!",
         "nextNodeId": "bad_end_5_a",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Lén lút tiếp cận, chôm chiếc vali rồi té.",
         "nextNodeId": "bad_end_5_b",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Làm Jojo pose áp đảo aura địch.",
         "nextNodeId": "bad_end_5_c",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       }
     ]
   },
@@ -229,23 +229,23 @@
     "characterName": "Hệ Thống",
     "isReal": true,
     "dialogue": "TÌM RA MANH MỐI CHỦ CHỐT!\nTại Trạm Bơm Nước Ngầm tĩnh lặng, bạn không vội vàng tìm kiếm bức tượng, mà tinh ý vớt được một chiếc vali chống nước lững lờ trôi. Bên trong là 'Cuốn Sổ Tay Kế Hoạch' của The Phantom Axolotls! Bằng cách vượt qua các tầng bẫy tư duy, bạn đã chứng minh được sự nhạy bén và đam mê phá án thực thụ. Hãy mang manh mối này về nộp cho Trưởng phòng PCA!",
-    "characterImage": "Mỹ Nghệ.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "mynghe.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Đỉnh quá! Chơi lại từ đầu.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Ăn mừng chiến thắng với đồng bọn.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Nhận thưởng rồi đi ngủ thôiii.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       }
     ]
   },
@@ -254,23 +254,23 @@
     "characterName": "Hệ Thống",
     "isReal": false,
     "dialogue": "Vung cờ lê trượt! Bạn đã bị Johnny Sins 96 Bách Khoa skibidi, THẤT BẠI!",
-    "characterImage": "Mỹ Nghệ.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "mynghe.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Phục thù! Chơi lại từ đầu.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Ngồi khóc lóc ăn vạ hệ thống.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Tắt game đi ngủ cho khoẻ.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       }
     ]
   },
@@ -279,23 +279,23 @@
     "characterName": "Hệ Thống",
     "isReal": false,
     "dialogue": "Bạn hì hục làm đến tối muộn, nhưng tên kia lại bảo rằng chả biết manh mối gì cả?! Bạn đã phí công vô ích, THẤT BẠI!",
-    "characterImage": "Mỹ Nghệ.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "mynghe.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Phục thù! Chơi lại từ đầu.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Ngồi khóc lóc ăn vạ hệ thống.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Tắt game đi ngủ cho khoẻ.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       }
     ]
   },
@@ -304,23 +304,23 @@
     "characterName": "Hệ Thống",
     "isReal": false,
     "dialogue": "Bạn thái độ lồi lõm bảo 'làm việc đi thằng nô lệ', Thợ cơ khí tức giận dùng mỏ lết cho bạn một vé đăng xuất. THẤT BẠI.",
-    "characterImage": "Mỹ Nghệ.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "mynghe.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Phục thù! Chơi lại từ đầu.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Ngồi khóc lóc ăn vạ hệ thống.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Tắt game đi ngủ cho khoẻ.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       }
     ]
   },
@@ -329,23 +329,23 @@
     "characterName": "Hệ Thống",
     "isReal": false,
     "dialogue": "Bạn nhắm mắt giả vờ ngất xỉu trốn việc, nhưng hắn lại tưởng bạn hẹo thật nên đem ra bãi rác phi tang. THẤT BẠI.",
-    "characterImage": "Mỹ Nghệ.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "mynghe.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Phục thù! Chơi lại từ đầu.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Ngồi khóc lóc ăn vạ hệ thống.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Tắt game đi ngủ cho khoẻ.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       }
     ]
   },
@@ -354,23 +354,23 @@
     "characterName": "Hệ Thống",
     "isReal": false,
     "dialogue": "Bạn bị còng tay lên phường và -30 củ vì tội xúi giục gây rối trật tự và tung tin giả, THẤT BẠI!",
-    "characterImage": "Mỹ Nghệ.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "mynghe.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Phục thù! Chơi lại từ đầu.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Ngồi khóc lóc ăn vạ hệ thống.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Tắt game đi ngủ cho khoẻ.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       }
     ]
   },
@@ -379,23 +379,23 @@
     "characterName": "Hệ Thống",
     "isReal": false,
     "dialogue": "Đám đông phía sau đang kích động thì bị bạn phanh gấp làm tắc đường. Bạn bị giẫm đạp không thương tiếc, THẤT BẠI!",
-    "characterImage": "Mỹ Nghệ.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "mynghe.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Phục thù! Chơi lại từ đầu.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Ngồi khóc lóc ăn vạ hệ thống.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Tắt game đi ngủ cho khoẻ.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       }
     ]
   },
@@ -404,23 +404,23 @@
     "characterName": "Hệ Thống",
     "isReal": false,
     "dialogue": "Bạn chê báo phèn đòi quét mã QR. Biên tập viên cay cú sút bạn văng thẳng về màn hình chính. THẤT BẠI.",
-    "characterImage": "Mỹ Nghệ.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "mynghe.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Phục thù! Chơi lại từ đầu.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Ngồi khóc lóc ăn vạ hệ thống.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Tắt game đi ngủ cho khoẻ.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       }
     ]
   },
@@ -429,23 +429,23 @@
     "characterName": "Hệ Thống",
     "isReal": false,
     "dialogue": "Mải livestream câu view nhưng bị cảnh sát hốt luôn lên phường vì tội 'gây rối trật tự cõi mạng'. Nộp phạt 5 củ. THẤT BẠI.",
-    "characterImage": "Mỹ Nghệ.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "mynghe.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Phục thù! Chơi lại từ đầu.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Ngồi khóc lóc ăn vạ hệ thống.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Tắt game đi ngủ cho khoẻ.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       }
     ]
   },
@@ -454,23 +454,23 @@
     "characterName": "Hệ Thống",
     "isReal": false,
     "dialogue": "Sybau vào năm 26 lớn ư! Đá Tan cười vào mặt bạn và bảo bạn ra chỗ khác chơi. THẤT BẠI!",
-    "characterImage": "Mỹ Nghệ.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "mynghe.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Phục thù! Chơi lại từ đầu.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Ngồi khóc lóc ăn vạ hệ thống.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Tắt game đi ngủ cho khoẻ.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       }
     ]
   },
@@ -479,23 +479,23 @@
     "characterName": "Hệ Thống",
     "isReal": false,
     "dialogue": "'Ở đây không có chỗ cho những suy luận sai lầm!' Đá Tan sút bạn bay ra khỏi tiệm kem. THẤT BẠI!",
-    "characterImage": "Mỹ Nghệ.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "mynghe.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Phục thù! Chơi lại từ đầu.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Ngồi khóc lóc ăn vạ hệ thống.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Tắt game đi ngủ cho khoẻ.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       }
     ]
   },
@@ -504,23 +504,23 @@
     "characterName": "Hệ Thống",
     "isReal": false,
     "dialogue": "Nhìn đểu Đá Tan, hắn buff bẩn ném nguyên viên đá bào siêu to khổng lồ vào mồm bạn. THẤT BẠI.",
-    "characterImage": "Mỹ Nghệ.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "mynghe.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Phục thù! Chơi lại từ đầu.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Ngồi khóc lóc ăn vạ hệ thống.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Tắt game đi ngủ cho khoẻ.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       }
     ]
   },
@@ -529,23 +529,23 @@
     "characterName": "Hệ Thống",
     "isReal": false,
     "dialogue": "ƯTF! Bro is not chali ciec, sybau! THẤT BẠI.",
-    "characterImage": "Mỹ Nghệ.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "mynghe.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Phục thù! Chơi lại từ đầu.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Ngồi khóc lóc ăn vạ hệ thống.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Tắt game đi ngủ cho khoẻ.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       }
     ]
   },
@@ -554,23 +554,23 @@
     "characterName": "Hệ Thống",
     "isReal": false,
     "dialogue": "Bạn nhảy bổ vào đánh người ta te tua, hóa ra đó chỉ là một Quý bửu đang cosplay. Bạn bị bóc phốt trên mạng xã hội, mất việc. THẤT BẠI.",
-    "characterImage": "Mỹ Nghệ.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "mynghe.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Phục thù! Chơi lại từ đầu.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Ngồi khóc lóc ăn vạ hệ thống.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Tắt game đi ngủ cho khoẻ.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       }
     ]
   },
@@ -579,23 +579,23 @@
     "characterName": "Hệ Thống",
     "isReal": false,
     "dialogue": "Bạn lén mở vali kiểm tra thì nhận ra bên trong là một chiếc vali khác. Bạn lại mở thì lại ra một chiếc vali nhỏ hơn, lặp lại lặp lại. Bạn đã phí công vô ích!. THẤT BẠI.",
-    "characterImage": "Mỹ Nghệ.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "mynghe.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Phục thù! Chơi lại từ đầu.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Ngồi khóc lóc ăn vạ hệ thống.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Tắt game đi ngủ cho khoẻ.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       }
     ]
   },
@@ -604,23 +604,23 @@
     "characterName": "Hệ Thống",
     "isReal": false,
     "dialogue": "'Thì ra mày cũng là một stand user?' tên quý bửu trừng mắt nhìn bạn. Chưa đầy 2s, bạn bị một lực vô hình đấm văng từ đỉnh tháp xuống. THẤT BẠI.",
-    "characterImage": "Mỹ Nghệ.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "mynghe.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Phục thù! Chơi lại từ đầu.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Ngồi khóc lóc ăn vạ hệ thống.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Tắt game đi ngủ cho khoẻ.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       }
     ]
   },
@@ -629,23 +629,23 @@
     "characterName": "Hệ Thống",
     "isReal": false,
     "dialogue": "Bạn xuống hầm rượu thì có một kẻ lao ra solokill túy quyền với bạn. Bạn chân yếu tay mềm không địch nổi, liền bị hành cho te tua. THẤT BẠI.",
-    "characterImage": "Mỹ Nghệ.png",
-    "sceneImage": "cover (1).jpg",
+    "characterImage": "mynghe.png",
+    "sceneImage": "cover.jpg",
     "options": [
       {
         "text": "Phục thù! Chơi lại từ đầu.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Ngồi khóc lóc ăn vạ hệ thống.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       },
       {
         "text": "Tắt game đi ngủ cho khoẻ.",
         "nextNodeId": "node_start",
-        "image": "Mỹ Nghệ.png"
+        "image": "mynghe.png"
       }
     ]
   }

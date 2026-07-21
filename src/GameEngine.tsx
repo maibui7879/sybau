@@ -3,7 +3,7 @@ import { GameNode, GameState } from "./types";
 import storyData from "./storyConfig.json";
 
 const defaultImageUrl = new URL("../default_image.jpeg", import.meta.url).href;
-const coverImageUrl = new URL("../cover (1).jpg", import.meta.url).href;
+const coverImageUrl = new URL("../cover.jpg", import.meta.url).href;
 const myNgheImageUrl = new URL("../Mỹ Nghệ.png", import.meta.url).href;
 const ngheChadImageUrl = new URL("../Nghệ Chad.png", import.meta.url).href;
 const ngheGamindImageUrl = new URL("../Nghệgamind.png", import.meta.url).href;

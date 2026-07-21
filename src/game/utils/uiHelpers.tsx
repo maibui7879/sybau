@@ -1,7 +1,7 @@
 import { GameNode } from "../../types";
 
 export const defaultImageUrl = new URL("../../default_image.jpeg", import.meta.url).href;
-export const coverImageUrl = new URL("../../cover (1).jpg", import.meta.url).href;
+export const coverImageUrl = new URL("../../cover.jpg", import.meta.url).href;
 
 const roleLabels: Record<string, { displayName: string; subtitle: string }> = {
   "Sếp": {
