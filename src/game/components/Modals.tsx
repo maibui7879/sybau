@@ -71,7 +71,7 @@ export function NotepadModal({ state, onClose }: NotepadModalProps) {
                     <p className={`text-xs leading-normal ${state.currentNodeId === "node_good_end" ? "text-emerald-500 font-semibold" : "text-[#ebd9b4] font-medium"}`}>
                       Thoát hiểm qua Trạm Bơm Ngầm
                     </p>
-                    <p className="text-[9px] text-stone-500 mt-0.5">Tìm ra bức tượng Nghệ Béo và hoàn tất hồ sơ.</p>
+                    <p className="text-[9px] text-stone-500 mt-0.5">Tìm ra Manh mối và hoàn tất hồ sơ.</p>
                   </div>
                 </li>
               </ul>
