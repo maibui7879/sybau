@@ -34,7 +34,7 @@ export default function GameScreen({
             <img src={currentRoleAsset.avatarUrl} alt={currentRoleAsset.displayName} className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-black/45"></div>
             <div className="relative z-10 flex flex-col items-center justify-center text-center px-1">
-              <span className="text-[10px] font-bold text-[#f8e7c0] tracking-[0.15em] font-mono uppercase">
+              <span className="text-[10px] font-bold text-[#f8e7c0]  font-mono uppercase">
                 {currentRoleAsset.displayName}
               </span>
               <span className="text-[7px] text-stone-300 font-mono uppercase -mt-0.5 leading-tight">
@@ -44,7 +44,7 @@ export default function GameScreen({
           </div>
 
           <div className="flex-1 text-center sm:text-left">
-            <div className={`text-[10px] tracking-[0.15em] font-bold uppercase mb-2 ${state.gameStatus === "VICTORY" ? "text-emerald-300" : state.gameStatus === "GAMEOVER" ? "text-rose-300" : "text-[#d4b270]/70"}`} style={{ fontFamily: "Lexend, sans-serif" }}>
+            <div className={`text-[10px]  font-bold uppercase mb-2 ${state.gameStatus === "VICTORY" ? "text-emerald-300" : state.gameStatus === "GAMEOVER" ? "text-rose-300" : "text-[#d4b270]/70"}`} style={{ fontFamily: "Lexend, sans-serif" }}>
               {state.gameStatus === "VICTORY"
                 ? "KẾT THÚC THÀNH CÔNG"
                 : state.gameStatus === "GAMEOVER"
@@ -69,7 +69,7 @@ export default function GameScreen({
             <div className="flex flex-col items-center gap-6 py-4">
               <button
                 onClick={handleReset}
-                className="px-8 py-3.5 bg-[#3d1a10] border border-[#b91c1c] text-xs text-[#ebd9b4] font-semibold uppercase tracking-[0.15em] hover:bg-[#4d2114] hover:border-[#ef4444] transition-all cursor-pointer rounded-sm"
+                className="px-8 py-3.5 bg-[#3d1a10] border border-[#b91c1c] text-xs text-[#ebd9b4] font-semibold uppercase  hover:bg-[#4d2114] hover:border-[#ef4444] transition-all cursor-pointer rounded-sm"
                 style={{ fontFamily: "Lexend, sans-serif" }}
               >
                 Chơi Lại

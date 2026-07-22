@@ -32,11 +32,11 @@ export function NotepadModal({ state, onClose }: NotepadModalProps) {
       <div className="bg-[#1a1410] border-2 border-[#3c2a1c] w-full max-w-4xl h-full max-h-[85vh] md:h-[520px] rounded flex flex-col relative shadow-[0_20px_60px_rgba(0,0,0,0.9)] overflow-hidden">
         <div className="h-14 border-b border-[#3c2a1c] bg-[#221a14] px-6 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
-            <h2 className="text-xs font-bold tracking-[0.15em] text-[#ebd9b4] uppercase">SỔ TAY THÁM TỬ</h2>
+            <h2 className="text-xs font-bold  text-[#ebd9b4] uppercase">SỔ TAY THÁM TỬ</h2>
           </div>
           <button
             onClick={onClose}
-            className="px-3 py-1 bg-[#2e1c12] hover:bg-[#3d2417] text-[#d4b270] border border-[#4a3622] rounded text-[10px] uppercase tracking-[0.15em] transition-colors cursor-pointer"
+            className="px-3 py-1 bg-[#2e1c12] hover:bg-[#3d2417] text-[#d4b270] border border-[#4a3622] rounded text-[10px] uppercase  transition-colors cursor-pointer"
           >
             Đóng
           </button>
@@ -45,7 +45,7 @@ export function NotepadModal({ state, onClose }: NotepadModalProps) {
         <div className="flex-1 overflow-y-auto md:overflow-hidden flex flex-col md:flex-row">
           <div className="w-full md:w-[280px] border-b md:border-b-0 md:border-r border-[#3c2a1c] p-6 flex flex-col justify-between bg-[#140f0c]/50">
             <div>
-              <h3 className="text-[10px] font-bold text-[#d4b270] uppercase tracking-[0.15em] border-b border-[#3c2a1c] pb-2 mb-4">Mục Tiêu Nghiên Cứu</h3>
+              <h3 className="text-[10px] font-bold text-[#d4b270] uppercase  border-b border-[#3c2a1c] pb-2 mb-4">Mục Tiêu Nghiên Cứu</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <div className={`mt-1 w-2.5 h-2.5 border flex-shrink-0 rounded-sm ${state.currentNodeId !== "node_start" ? "bg-[#d4b270] border-[#d4b270]" : "border-[#7c5c3e]"}`}></div>
@@ -83,7 +83,7 @@ export function NotepadModal({ state, onClose }: NotepadModalProps) {
           </div>
 
           <div className="flex-1 border-b md:border-b-0 md:border-r border-[#3c2a1c] p-6 flex flex-col bg-[#16110e]/20 overflow-y-auto">
-            <h3 className="text-[10px] font-bold text-[#d4b270] uppercase tracking-[0.15em] border-b border-[#3c2a1c] pb-2 mb-4">Kho Vật Chứng Thu Thập</h3>
+            <h3 className="text-[10px] font-bold text-[#d4b270] uppercase  border-b border-[#3c2a1c] pb-2 mb-4">Kho Vật Chứng Thu Thập</h3>
             <div className="space-y-4">
               <div className={`p-3 border rounded flex gap-3 transition-all duration-300 ${state.currentNodeId !== "node_start" ? "border-[#d4b270]/40 bg-[#221a14]/80 shadow-md" : "border-stone-800 bg-black/10 opacity-30"}`}>
                 <div className="w-10 h-10 border border-[#3c2a1c] rounded flex flex-col items-center justify-center bg-[#140f0c] shrink-0 text-xs text-[#d4b270] font-bold">
@@ -131,7 +131,7 @@ export function NotepadModal({ state, onClose }: NotepadModalProps) {
 
           <div className="w-full md:w-[280px] p-6 flex flex-col justify-between bg-[#140f0c]/30 overflow-y-auto md:overflow-hidden">
             <div className="flex-1 flex flex-col overflow-hidden">
-              <h3 className="text-[10px] font-bold text-[#d4b270] uppercase tracking-[0.15em] border-b border-[#3c2a1c] pb-2 mb-4">Nhật Ký Vụ Án (Log)</h3>
+              <h3 className="text-[10px] font-bold text-[#d4b270] uppercase  border-b border-[#3c2a1c] pb-2 mb-4">Nhật Ký Vụ Án (Log)</h3>
               <div className="flex-1 overflow-y-auto space-y-3 font-mono text-[9px] pr-1">
                 {state.history.length === 0 ? (
                   <p className="italic text-stone-600">Hành trình trống. Vui lòng đưa ra quyết định để hệ thống lưu vết thám tử.</p>
@@ -144,7 +144,6 @@ export function NotepadModal({ state, onClose }: NotepadModalProps) {
                         <div>
                           <p className="text-stone-400 font-semibold">Bước {idx + 1}: Di Chuyển</p>
                           <p className="text-[#ebd9b4] mt-0.5 font-sans font-medium">{node?.characterName || "Điểm rẽ"}</p>
-                          <p className="text-[8px] text-stone-500 font-mono">ID: {h.toUpperCase()}</p>
                         </div>
                       </div>
                     );
@@ -165,11 +164,11 @@ export function WitnessModal({ currentNode, currentRoleAsset, onClose }: Witness
       <div className="bg-[#1a1410] border-2 border-[#3c2a1c] w-full max-w-2xl h-full max-h-[85vh] md:h-[480px] rounded flex flex-col relative shadow-[0_20px_60px_rgba(0,0,0,0.9)] overflow-hidden">
         <div className="h-14 border-b border-[#3c2a1c] bg-[#221a14] px-6 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
-            <h2 className="text-xs font-bold tracking-[0.15em] text-[#ebd9b4] uppercase">HỒ SƠ NHÂN CHỨNG</h2>
+            <h2 className="text-xs font-bold  text-[#ebd9b4] uppercase">HỒ SƠ NHÂN CHỨNG</h2>
           </div>
           <button
             onClick={onClose}
-            className="px-3 py-1 bg-[#2e1c12] hover:bg-[#3d2417] text-[#d4b270] border border-[#4a3622] rounded text-[10px] uppercase tracking-[0.15em] transition-colors cursor-pointer"
+            className="px-3 py-1 bg-[#2e1c12] hover:bg-[#3d2417] text-[#d4b270] border border-[#4a3622] rounded text-[10px] uppercase  transition-colors cursor-pointer"
           >
             Đóng
           </button>
@@ -181,14 +180,14 @@ export function WitnessModal({ currentNode, currentRoleAsset, onClose }: Witness
               <img src={currentRoleAsset.avatarUrl} alt={currentNode.characterName} className="w-full h-full object-cover" />
             </div>
             <div className="text-center">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#ebd9b4] mt-2">{currentNode.characterName}</p>
+              <p className="text-xs font-semibold uppercase  text-[#ebd9b4] mt-2">{currentNode.characterName}</p>
             </div>
           </div>
 
           <div className="flex-1 flex flex-col justify-between space-y-4">
             <div className="space-y-4">
               <div>
-                <h3 className="text-[10px] font-bold text-[#d4b270] uppercase tracking-[0.15em] mb-1">Mô tả Đối Tượng</h3>
+                <h3 className="text-[10px] font-bold text-[#d4b270] uppercase  mb-1">Mô tả Đối Tượng</h3>
                 <p className="text-xs text-stone-300 leading-relaxed font-sans">
                   {currentNode.characterName === "Sếp" && "Là sếp nha ae"}
                   {currentNode.characterName === "Thợ cơ khí" && "Sinh năm 98 học Bác khoa Cơ khí bỏ ngang qua IT. Vì bong bóng AI slop nên lại bỏ IT về cơ khí."}
@@ -199,14 +198,14 @@ export function WitnessModal({ currentNode, currentRoleAsset, onClose }: Witness
               </div>
 
               <div>
-                <h3 className="text-[10px] font-bold text-[#d4b270] uppercase tracking-[0.15em] mb-1">Lời Khai Thu Thập Được</h3>
+                <h3 className="text-[10px] font-bold text-[#d4b270] uppercase  mb-1">Lời Khai Thu Thập Được</h3>
                 <div className="bg-[#140f0c] border border-[#3c2a1c] p-3 rounded italic text-xs text-[#ebd9b4] leading-relaxed font-sans">
                   "{highlightClues(currentNode.dialogue)}"
                 </div>
               </div>
 
               <div>
-                <h3 className="text-[10px] font-bold text-[#d4b270] uppercase tracking-[0.15em] mb-1">Nhận định của Thám Tử</h3>
+                <h3 className="text-[10px] font-bold text-[#d4b270] uppercase  mb-1">Nhận định của Thám Tử</h3>
                 <p className="text-[11px] text-stone-400 italic font-sans leading-normal">
                   {currentNode.characterName === "Sếp" && "Sao bạn lại nghi ngờ sếp?"}
                   {currentNode.characterName === "Thợ Cơ khí" && "Hình như mình từng thấy mặt hắn ta trên hornpub?"}
@@ -249,11 +248,11 @@ export function MapModal({ state, currentNodeId, mapEntryNodeId, isLinkActive, o
         {/* Thanh Header */}
         <div className="h-14 border-b border-[#ebd9b4] bg-[#f7f2e8] px-6 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
-            <h2 className="text-xs font-bold tracking-[0.15em] text-[#5c4432] uppercase">SƠ ĐỒ PHÁ ÁN</h2>
+            <h2 className="text-xs font-bold  text-[#5c4432] uppercase">SƠ ĐỒ PHÁ ÁN</h2>
           </div>
           <button
             onClick={onClose}
-            className="px-3 py-1 bg-[#ebd9b4] hover:bg-[#d4b270] text-[#5c4432] border border-[#c5b299] rounded text-[10px] uppercase tracking-[0.15em] transition-colors cursor-pointer font-bold"
+            className="px-3 py-1 bg-[#ebd9b4] hover:bg-[#d4b270] text-[#5c4432] border border-[#c5b299] rounded text-[10px] uppercase  transition-colors cursor-pointer font-bold"
           >
             Bỏ qua
           </button>

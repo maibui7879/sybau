@@ -35,7 +35,7 @@ export default function DecisionChoices({
             {/* Nội dung chữ */}
             <div className="p-3 sm:p-4 flex-1 flex flex-col justify-between min-w-0">
               <div className="w-full flex items-center justify-start pb-2 shrink-0 border-b border-[#3c2a1c]/20">
-                <span className="text-[8px] font-bold tracking-[0.15em] text-[#d4b270]/50 uppercase">
+                <span className="text-[8px] font-bold  text-[#d4b270]/50 uppercase">
                   HƯỚNG ĐI {labelNum}
                 </span>
               </div>
@@ -46,7 +46,7 @@ export default function DecisionChoices({
                 </p>
               </div>
 
-              <div className="w-full pt-2 border-t border-[#3c2a1c]/40 flex flex-row items-center justify-between gap-2 text-[8px] text-[#d4b270]/40 group-hover:text-[#d4b270] tracking-[0.15em] uppercase font-bold transition-all shrink-0">
+              <div className="w-full pt-2 border-t border-[#3c2a1c]/40 flex flex-row items-center justify-between gap-2 text-[8px] text-[#d4b270]/40 group-hover:text-[#d4b270]  uppercase font-bold transition-all shrink-0">
                 <span className="hidden sm:inline-block">Lựa chọn</span>
                 <span className="group-hover:translate-x-1 transition-transform ml-auto sm:ml-0">
                   {isReturnChoice ? "QUAY LẠI" : "TIẾP TỤC →"}

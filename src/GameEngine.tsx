@@ -219,7 +219,7 @@ export default function GameEngine() {
       {/* HEADER & NAV BAR */}
       <header id="game-header" className="min-h-16 border-b border-[#3c2a1c] flex flex-col sm:flex-row items-center justify-between gap-3 p-4 sm:px-8 bg-[#201914] shrink-0 shadow-[inset_0_-1px_0_rgba(255,255,255,0.05)]">
         <div>
-          <h1 className="text-base font-semibold tracking-[0.15em] uppercase text-[#d4b270]" style={{ fontFamily: "Lexend, sans-serif" }}>
+          <h1 className="text-base font-semibold  uppercase text-[#d4b270]" style={{ fontFamily: "Lexend, sans-serif" }}>
             Tìm Manh Mối hay cái gì đó tương tự
           </h1>
         </div>
@@ -228,27 +228,27 @@ export default function GameEngine() {
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
           <button
             onClick={() => setIsNotebookOpen(true)}
-            className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[#2a1d15] hover:bg-[#3d2b1f] border border-[#d4b270]/40 hover:border-[#d4b270] rounded-sm text-xs font-semibold text-[#ebd9b4] transition-all cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)] uppercase tracking-[0.15em]"
+            className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[#2a1d15] hover:bg-[#3d2b1f] border border-[#d4b270]/40 hover:border-[#d4b270] rounded-sm text-xs font-semibold text-[#ebd9b4] transition-all cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)] uppercase "
           >
             Sổ Tay
           </button>
 
           <button
             onClick={() => setIsWitnessOpen(true)}
-            className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[#2a1d15] hover:bg-[#3d2b1f] border border-[#d4b270]/40 hover:border-[#d4b270] rounded-sm text-xs font-semibold text-[#ebd9b4] transition-all cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)] uppercase tracking-[0.15em]"
+            className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[#2a1d15] hover:bg-[#3d2b1f] border border-[#d4b270]/40 hover:border-[#d4b270] rounded-sm text-xs font-semibold text-[#ebd9b4] transition-all cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)] uppercase "
           >
             Nhân Chứng
           </button>
 
           <button
             onClick={() => setIsMapOpen(true)}
-            className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[#2a1d15] hover:bg-[#3d2b1f] border border-[#d4b270]/40 hover:border-[#d4b270] rounded-sm text-xs font-semibold text-[#ebd9b4] transition-all cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)] uppercase tracking-[0.15em]"
+            className="px-3 py-1.5 sm:px-4 sm:py-2 bg-[#2a1d15] hover:bg-[#3d2b1f] border border-[#d4b270]/40 hover:border-[#d4b270] rounded-sm text-xs font-semibold text-[#ebd9b4] transition-all cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.4)] uppercase "
           >
             Bản Đồ
           </button>
 
           {state.gameStatus !== "PLAYING" && (
-            <span className={`px-2 py-1 text-[9px] font-mono font-bold tracking-[0.15em] border rounded ${state.gameStatus === "VICTORY" ? "border-emerald-500/40 text-emerald-500 bg-emerald-950/20" : "border-red-500/40 text-red-500 bg-red-950/20"}`}>
+            <span className={`px-2 py-1 text-[9px] font-mono font-bold  border rounded ${state.gameStatus === "VICTORY" ? "border-emerald-500/40 text-emerald-500 bg-emerald-950/20" : "border-red-500/40 text-red-500 bg-red-950/20"}`}>
               {state.gameStatus === "VICTORY" ? "SUCCESS" : "FAILED"}
             </span>
           )}
@@ -276,7 +276,7 @@ export default function GameEngine() {
                 <img src={currentRoleAsset.avatarUrl} alt={currentRoleAsset.displayName} className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black/45"></div>
                 <div className="relative z-10 flex flex-col items-center justify-center text-center px-1">
-                  <span className="text-[10px] font-bold text-[#f8e7c0] tracking-[0.15em] font-mono uppercase">
+                  <span className="text-[10px] font-bold text-[#f8e7c0]  font-mono uppercase">
                     {currentRoleAsset.displayName}
                   </span>
                   <span className="text-[7px] text-stone-300 font-mono uppercase -mt-0.5 leading-tight">
@@ -287,7 +287,7 @@ export default function GameEngine() {
             
             <div className="flex-1 text-center sm:text-left">
               {/* Character Speaker Badge */}
-              <div className="text-[10px] tracking-[0.15em] font-bold text-[#d4b270]/70 uppercase mb-2" style={{ fontFamily: "Lexend, sans-serif" }}>
+              <div className="text-[10px]  font-bold text-[#d4b270]/70 uppercase mb-2" style={{ fontFamily: "Lexend, sans-serif" }}>
                 {currentNode.characterName === "Hệ Thống" || currentNode.characterName === "Hồ sơ" ? "Hệ Thống Báo Cáo" : `Lời Khai: ${currentNode.characterName}`}
               </div>
               
@@ -323,7 +323,7 @@ export default function GameEngine() {
                       <div className="p-4 flex-1 flex flex-col justify-between w-full">
                         {/* Top tag */}
                         <div className="w-full flex items-center justify-start pb-2 shrink-0 border-b border-[#3c2a1c]/20">
-                          <span className="text-[8px] font-bold tracking-[0.15em] text-[#d4b270]/50 uppercase">
+                          <span className="text-[8px] font-bold  text-[#d4b270]/50 uppercase">
                             HƯỚNG ĐI {labelNum}
                           </span>
                         </div>
@@ -336,7 +336,7 @@ export default function GameEngine() {
                         </div>
 
                         {/* Bottom indicator */}
-                        <div className="w-full pt-2 border-t border-[#3c2a1c]/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-[8px] text-[#d4b270]/40 group-hover:text-[#d4b270] tracking-[0.15em] uppercase font-bold transition-all shrink-0">
+                        <div className="w-full pt-2 border-t border-[#3c2a1c]/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-[8px] text-[#d4b270]/40 group-hover:text-[#d4b270]  uppercase font-bold transition-all shrink-0">
                           <span>Lựa chọn</span>
                           <span className="group-hover:translate-x-1 transition-transform">{isReturnChoice ? "QUAY LẠI" : "TIẾP TỤC →"}</span>
                         </div>
@@ -351,12 +351,12 @@ export default function GameEngine() {
               </div>
             ) : (
               <div className="flex flex-col items-center gap-6 py-4">
-                <p className="text-sm tracking-[0.15em] font-bold uppercase text-amber-500" style={{ fontFamily: "Lexend, sans-serif" }}>
+                <p className="text-sm  font-bold uppercase text-amber-500" style={{ fontFamily: "Lexend, sans-serif" }}>
                   {state.gameStatus === "VICTORY" ? "PHÁ ÁN THÀNH CÔNG" : "NHIỆM VỤ THẤT BẠI"}
                 </p>
                 <button
                   onClick={handleReset}
-                  className="px-8 py-3.5 bg-[#3d1a10] border border-[#b91c1c] text-xs text-[#ebd9b4] font-semibold uppercase tracking-[0.15em] hover:bg-[#4d2114] hover:border-[#ef4444] transition-all cursor-pointer rounded-sm"
+                  className="px-8 py-3.5 bg-[#3d1a10] border border-[#b91c1c] text-xs text-[#ebd9b4] font-semibold uppercase  hover:bg-[#4d2114] hover:border-[#ef4444] transition-all cursor-pointer rounded-sm"
                   style={{ fontFamily: "Lexend, sans-serif" }}
                 >
                   Chơi Lại
@@ -375,11 +375,11 @@ export default function GameEngine() {
             {/* Modal Header */}
             <div className="h-14 border-b border-[#3c2a1c] bg-[#221a14] px-6 flex items-center justify-between shrink-0">
               <div className="flex items-center gap-3">
-                <h2 className="text-xs font-bold tracking-[0.15em] text-[#ebd9b4] uppercase">SỔ TAY THÁM TỬ</h2>
+                <h2 className="text-xs font-bold  text-[#ebd9b4] uppercase">SỔ TAY THÁM TỬ</h2>
               </div>
               <button 
                 onClick={() => setIsNotebookOpen(false)}
-                className="px-3 py-1 bg-[#2e1c12] hover:bg-[#3d2417] text-[#d4b270] border border-[#4a3622] rounded text-[10px] uppercase tracking-[0.15em] transition-colors cursor-pointer"
+                className="px-3 py-1 bg-[#2e1c12] hover:bg-[#3d2417] text-[#d4b270] border border-[#4a3622] rounded text-[10px] uppercase  transition-colors cursor-pointer"
               >
                 Đóng
               </button>
@@ -391,7 +391,7 @@ export default function GameEngine() {
               {/* Left column: Objectives */}
               <div className="w-full md:w-[280px] border-b md:border-b-0 md:border-r border-[#3c2a1c] p-6 flex flex-col justify-between bg-[#140f0c]/50">
                 <div>
-                  <h3 className="text-[10px] font-bold text-[#d4b270] uppercase tracking-[0.15em] border-b border-[#3c2a1c] pb-2 mb-4">Mục Tiêu Nghiên Cứu</h3>
+                  <h3 className="text-[10px] font-bold text-[#d4b270] uppercase  border-b border-[#3c2a1c] pb-2 mb-4">Mục Tiêu Nghiên Cứu</h3>
                   <ul className="space-y-4">
                     <li className="flex items-start gap-3">
                       <div className={`mt-1 w-2.5 h-2.5 border flex-shrink-0 rounded-sm ${state.currentNodeId !== "node_start" ? "bg-[#d4b270] border-[#d4b270]" : "border-[#7c5c3e]"}`}></div>
@@ -430,7 +430,7 @@ export default function GameEngine() {
 
               {/* Middle column: Evidence List */}
               <div className="flex-1 border-b md:border-b-0 md:border-r border-[#3c2a1c] p-6 flex flex-col bg-[#16110e]/20 overflow-y-auto">
-                <h3 className="text-[10px] font-bold text-[#d4b270] uppercase tracking-[0.15em] border-b border-[#3c2a1c] pb-2 mb-4">Kho Vật Chứng Thu Thập</h3>
+                <h3 className="text-[10px] font-bold text-[#d4b270] uppercase  border-b border-[#3c2a1c] pb-2 mb-4">Kho Vật Chứng Thu Thập</h3>
                 <div className="space-y-4">
                   
                   {/* Paper item */}
@@ -484,7 +484,7 @@ export default function GameEngine() {
               {/* Right column: Chronology logs */}
               <div className="w-full md:w-[280px] p-6 flex flex-col justify-between bg-[#140f0c]/30 overflow-y-auto md:overflow-hidden">
                 <div className="flex-1 flex flex-col overflow-hidden">
-                  <h3 className="text-[10px] font-bold text-[#d4b270] uppercase tracking-[0.15em] border-b border-[#3c2a1c] pb-2 mb-4">Nhật Ký Vụ Án (Log)</h3>
+                  <h3 className="text-[10px] font-bold text-[#d4b270] uppercase  border-b border-[#3c2a1c] pb-2 mb-4">Nhật Ký Vụ Án (Log)</h3>
                   <div className="flex-1 overflow-y-auto space-y-3 font-mono text-[9px] pr-1">
                     {state.history.length === 0 ? (
                       <p className="italic text-stone-600">Hành trình trống. Vui lòng đưa ra quyết định để hệ thống lưu vết thám tử.</p>
@@ -521,11 +521,11 @@ export default function GameEngine() {
             {/* Modal Header */}
             <div className="h-14 border-b border-[#3c2a1c] bg-[#221a14] px-6 flex items-center justify-between shrink-0">
               <div className="flex items-center gap-3">
-                <h2 className="text-xs font-bold tracking-[0.15em] text-[#ebd9b4] uppercase">HỒ SƠ NHÂN CHỨNG</h2>
+                <h2 className="text-xs font-bold  text-[#ebd9b4] uppercase">HỒ SƠ NHÂN CHỨNG</h2>
               </div>
               <button 
                 onClick={() => setIsWitnessOpen(false)}
-                className="px-3 py-1 bg-[#2e1c12] hover:bg-[#3d2417] text-[#d4b270] border border-[#4a3622] rounded text-[10px] uppercase tracking-[0.15em] transition-colors cursor-pointer"
+                className="px-3 py-1 bg-[#2e1c12] hover:bg-[#3d2417] text-[#d4b270] border border-[#4a3622] rounded text-[10px] uppercase  transition-colors cursor-pointer"
               >
                 Đóng
               </button>
@@ -540,7 +540,7 @@ export default function GameEngine() {
                   <img src={currentRoleAsset.avatarUrl} alt={currentNode.characterName} className="w-full h-full object-cover" />
                 </div>
                 <div className="text-center">
-                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#ebd9b4] mt-2">{currentNode.characterName}</p>
+                  <p className="text-xs font-semibold uppercase  text-[#ebd9b4] mt-2">{currentNode.characterName}</p>
                 </div>
               </div>
 
@@ -548,7 +548,7 @@ export default function GameEngine() {
               <div className="flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-[10px] font-bold text-[#d4b270] uppercase tracking-[0.15em] mb-1">Mô tả Đối Tượng</h3>
+                    <h3 className="text-[10px] font-bold text-[#d4b270] uppercase  mb-1">Mô tả Đối Tượng</h3>
                     <p className="text-xs text-stone-300 leading-relaxed font-sans">
                       {currentNode.characterName === "Sếp" && "Là sếp nha ae"}
                       {currentNode.characterName === "Thợ cơ khí" && "Sinh năm 98 học Bác khoa Cơ khí bỏ ngang qua IT. Vì bong bóng AI slop nên lại bỏ IT về cơ khí."}
@@ -559,14 +559,14 @@ export default function GameEngine() {
                   </div>
 
                   <div>
-                    <h3 className="text-[10px] font-bold text-[#d4b270] uppercase tracking-[0.15em] mb-1">Lời Khai Thu Thập Được</h3>
+                    <h3 className="text-[10px] font-bold text-[#d4b270] uppercase  mb-1">Lời Khai Thu Thập Được</h3>
                     <div className="bg-[#140f0c] border border-[#3c2a1c] p-3 rounded italic text-xs text-[#ebd9b4] leading-relaxed font-sans">
                       "{highlightClues(currentNode.dialogue)}"
                     </div>
                   </div>
 
                   <div>
-                    <h3 className="text-[10px] font-bold text-[#d4b270] uppercase tracking-[0.15em] mb-1">Nhận định của Thám Tử</h3>
+                    <h3 className="text-[10px] font-bold text-[#d4b270] uppercase  mb-1">Nhận định của Thám Tử</h3>
                     <p className="text-[11px] text-stone-400 italic font-sans leading-normal">
                       {currentNode.characterName === "Sếp" && "Sao bạn lại nghi ngờ sếp?"}
                       {currentNode.characterName === "Thợ Máy" && "Hình như mình từng thấy mặt hắn ta trên hornpub?"}
@@ -597,11 +597,11 @@ export default function GameEngine() {
             {/* Modal Header */}
             <div className="h-14 border-b border-[#ebd9b4] bg-[#f7f2e8] px-6 flex items-center justify-between shrink-0">
               <div className="flex items-center gap-3">
-                <h2 className="text-xs font-bold tracking-[0.15em] text-[#5c4432] uppercase">SƠ ĐỒ PHÁ ÁN</h2>
+                <h2 className="text-xs font-bold  text-[#5c4432] uppercase">SƠ ĐỒ PHÁ ÁN</h2>
               </div>
               <button 
                 onClick={() => setIsMapOpen(false)}
-                className="px-3 py-1 bg-[#ebd9b4] hover:bg-[#d4b270] text-[#5c4432] border border-[#c5b299] rounded text-[10px] uppercase tracking-[0.15em] transition-colors cursor-pointer font-bold"
+                className="px-3 py-1 bg-[#ebd9b4] hover:bg-[#d4b270] text-[#5c4432] border border-[#c5b299] rounded text-[10px] uppercase  transition-colors cursor-pointer font-bold"
               >
                 Đóng
               </button>
